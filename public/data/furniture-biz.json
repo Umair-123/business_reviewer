@@ -1,0 +1,24 @@
+[
+	{
+		"id" : 8,
+		"name" : "Ashley Furniture Home Store",
+		"category" : "Furniture",
+		"profileImg" : "assets/img/dummy/ashly-logo.png",
+		"address" : "Lunda Bazar Railway Station",
+		"city" : "Lahore",
+		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod consequat. Duis aute irure dolor.",
+		"avgRating" : 3.5,
+		"totalReviews" : 10347829
+	},
+	{
+		"id" : 9,
+		"name" : "Wooden Seat",
+		"category" : "Furniture",
+		"profileImg" : "assets/img/dummy/wooden-seat-logo.png",
+		"address" : "Raiwind Road",
+		"city" : "Lahore",
+		"description" : "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commod consequat. Duis aute irure dolor.",
+		"avgRating" : 3.5,
+		"totalReviews" : 10347829
+	}
+]
