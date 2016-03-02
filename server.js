@@ -2,11 +2,22 @@ var express=require('express');
 var body_parser=require('body-parser');
 var mongoose=require('mongoose');
 var morgan=require('morgan');
-
+var app=express();
 
 var config=require('./config');
 
-var app=express();
+mongoose.connect(config.database,function(err){
+	if(err){
+		console.log("database connection unsuccessful");
+	}
+	else{
+		console.log("database connection successful");	
+	}
+
+});
+
+
+
 
 
 app.use(body_parser.urlencoded({extended:true}));
