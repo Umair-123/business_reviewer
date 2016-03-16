@@ -1,0 +1,271 @@
+<!--  For Guest -->
+<!-- Slider -->
+	</br>
+	<div id="bzns-slider" class="carousel slide" data-ride="carousel" ng-if="!main.loggedIn">
+	  <!-- Indicators
+	  <ol class="carousel-indicators">
+	    <li data-target="#bzns-slider" data-slide-to="0" class="active"></li>
+	    <li data-target="#bzns-slider" data-slide-to="1"></li>
+	    <li data-target="#bzns-slider" data-slide-to="2"></li>
+	  </ol>
+	  -->
+
+	  <!-- Wrapper for slides -->
+	  <div class="carousel-inner" role="listbox">
+	    <div class="item active">
+	      <div class="bzns-slide">
+	      	<div class="container">
+		      	<img src="app/views/assets/img/dummy/kfc-profile-img.png" class="img-circle bzns-profile">
+		      	<div class="rev-desc">
+		      		<img class="stars" src="app/views/assets/img/dummy/stars.png">
+		      		<span>3.5/5 <span>100,234,781 Reviews</span></span>
+		      		<h3>KFC <span>Chowk chuburji Nazd Umer Burger Lahore</span></h3>
+		      		<p>
+		      			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      			consequat. Duis aute irure dolor.
+		      		</p>
+		      	</div>
+	      	</div>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <div class="bzns-slide">
+	      	<div class="container">
+		      	<img src="app/views/assets/img/dummy/burger-king.jpg" class="img-circle bzns-profile">
+		      	<div class="rev-desc">
+		      		<img class="stars" src="app/views/assets/img/dummy/stars.png">
+		      		<span>3.5/5 <span>100,234,781 Reviews</span></span>
+		      		<h3>Burger King <span>Anarkali bazar Lahore</span></h3>
+		      		<p>
+		      			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      			quis nostrud exercitation ullamco laboris.
+		      		</p>
+		      	</div>
+	      	</div>
+	      </div>
+	    </div>
+	    <div class="item">
+	      <div class="bzns-slide">
+	      	<div class="container">
+		      	<img src="app/views/assets/img/dummy/shaukat-khanam.jpg" class="img-circle bzns-profile">
+		      	<div class="rev-desc">
+		      		<img class="stars" src="app/views/assets/img/dummy/stars.png">
+		      		<span>3.5/5 <span>100,234,781 Reviews</span></span>
+		      		<h3>Shoukat Khanam Cancer Hospital <span>Raiwind Road Lahore</span></h3>
+		      		<p>
+		      			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      			quis nostrud exercitation ullamco laboris.
+		      		</p>
+		      	</div>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+
+	  <!-- Controls -->
+	  <a class="left carousel-control" href="#bzns-slider" role="button" data-slide="prev">
+	    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+	    <span class="sr-only">Previous</span>
+	  </a>
+	  <a class="right carousel-control" href="#bzns-slider" role="button" data-slide="next">
+	    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+	    <span class="sr-only">Next</span>
+	  </a>
+	</div>
+	<!-- / Slider -->
+
+
+
+		<!-- Find Business -->
+	<div id="find-bzns-inp" class="row" ng-if="!main.loggedIn">
+		<div class="input-group col-md-8 col-md-offset-2">
+	      <input type="text" class="form-control" placeholder="type name of business to find">
+	      <span class="input-group-btn">
+	        <button class="btn btn-default" type="button">Find!</button>
+	      </span>
+	    </div><!-- /input-group -->
+	</div>
+	<!-- /Find Business -->
+
+	<!-- Registration area -->
+	<div id="reg-area" ng-if="!main.loggedIn">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div>
+						<h2>REGISTER YOUR BUSINESS NOW</h2>
+						<p>Let People Decide Standards</p>
+						<button class="btn btn-reg " id="registerBtn">REGISTER</button>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<div>
+						<h2>SHARE YOUR EXPERIENCES</h2>
+						<p>Help People Find The Best</p>
+						<button class="btn btn-reg " id="SignupBtn2">SIGN UP</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- /Registration area -->
+	<!-- City Selection -->
+	<div class="city-select" ng-if="!main.loggedIn">
+		<select class="form-control">
+			<option selected>Lahore</option>
+			<option>Karachi</option>
+			<option>Islamabad</option>
+			<option>Rawalpindi</option>
+			<option>Multan</option>
+			<option>Murree</option>
+			<option>Faisalabad</option>
+		</select>
+	</div>
+	<!-- /City Selection -->
+
+	<!-- Top Businesses -->
+	<div id="top-bzns"  ng-controller="businessController as biz" ng-if="!main.loggedIn">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-2">
+					<section ng-init="tab=1">
+						<ul class="nav nav-pills nav-stacked">
+						  <li role="presentation" ng-class="{active:tab===1}"><a href ng-click="tab=1">Food</a></li>
+						  <li role="presentation" ng-class="{active:tab===2}"><a href ng-click="tab=2">Real Estate</a></li>
+						  <li role="presentation" ng-class="{active:tab===3}"><a href ng-click="tab=3">Clothes</a></li>
+						  <li role="presentation" ng-class="{active:tab===4}"><a href ng-click="tab=4">Medical</a></li>
+						  <li role="presentation" ng-class="{active:tab===5}"><a href ng-click="tab=5">Education</a></li>
+						  <li role="presentation" ng-class="{active:tab===6}"><a href ng-click="tab=6">Transport</a></li>
+						  <li role="presentation" ng-class="{active:tab===7}"><a href ng-click="tab=7">Furniture</a></li>
+						  <li role="presentation" ng-class="{active:tab===8}"><a href ng-click="tab=8">Shopping</a></li>
+						</ul>
+					
+				</div>
+				<div class="col-md-10"  >
+					<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true" ng-repeat="info in biz.bizobj|orderBy:'-Ratings'">
+					  <div class="panel panel-default bzns-panel" ng-show="tab===1">
+					    <div class="panel-heading" role="tab" id="headingOne">
+					      <h4 class="panel-title">
+					        <a role="button" class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+					          <img ng-src="{{info.pic}}" class="bzns-profile img-circle">
+					          <h3>{{info.businessName}} <small>{{info.Address}}</smal
+					          	\></h3>
+					          <img class="pull-left stars" src="assets/img/dummy/stars.png">
+					          <span>{{info.Ratings}}/5 <span>100,435,909 Reviews</span></span>
+					          <p>
+					          	{{info.Description}}
+					          </p>
+					        </a>
+					      </h4>
+					    </div>
+
+					    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+					      
+					    
+					      <div class="panel-body" ng-repeat="cmnts in info.reviews">
+								
+					      <p>{{cmnts.Comment}}</p>
+					      <input id="stars_Id" class="rating" data-min="0" data-max="5" data-step="0.1">  
+					      
+					      </div>
+					    </div>
+					  </div>
+
+
+					  <div ng-include src="'app/views/pages/business.html'" class="panel panel-default bzns-panel" ng-show="tab===2" onload="biz.starfunc()">
+					    
+					  </div>
+					  <div ng-include src="'app/views/pages/business.html'" class="panel panel-default bzns-panel" ng-show="tab===3">
+					    
+					  </div>
+					  <div ng-include src="'app/views/pages/business.html'" class="panel panel-default bzns-panel" ng-show="tab===4">
+					    
+					  </div>
+					  <div ng-include src="'app/views/pages/business.html'" class="panel panel-default bzns-panel" ng-show="tab===5">
+					    
+					  </div>
+					  <div ng-include src="'app/views/pages/business.html'" class="panel panel-default bzns-panel" ng-show="tab===6">
+					    
+					  </div>
+					  <div ng-include src="'app/views/pages/business.html'" class="panel panel-default bzns-panel" ng-show="tab===7">
+					    
+					  </div>
+					  <div ng-include src="'app/views/pages/business.html'" class="panel panel-default bzns-panel" ng-show="tab===8">
+					    
+					  </div>
+
+
+
+
+
+					</div>
+					
+					  
+					</div>
+					</section>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- /Top Businesses -->
+
+<div class="container" ng-if="main.loggedIn">
+  <div class="jumbotron">
+    <h1>Welcome To Your Profile</h1> 
+    <p>From Here You can upload and manage your Business Profile.</p> 
+  </div> 
+</div>
+
+
+
+
+
+
+<!--
+<div class="row" ng-if="main.loggedIn">
+
+	<div class="col-md-3">
+
+
+	</div>
+
+	<div class="col-md-4" ng-controller="StoryController as story">
+		<div class="row">
+			<div class="panel panel-primary">
+				<div class="panel-heading">Write your Story</div>
+
+				<div class="panel-body">
+				<form ng-submit="story.createStory()">
+				<input class="form-control input-lg" type="text" ng-model="story.storyData.content" placeholder=".....">
+				
+				</form>
+				</div>
+			</div>
+
+			<div class="panel panel-success">
+				<div class="panel-heading">Your Stories</div>
+				<div class="panel-body" ng-repeat="each in story.stories | reverse">
+					<p>{{ each.content }}</p>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+	<div class="col-md-3">
+
+
+	</div>
+
+
+</div>
+-->
+
+
+

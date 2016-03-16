@@ -1,0 +1,25 @@
+bznsPreview:
+	{
+		Comment:
+		{
+			comment:String,
+			userId:Number
+		},
+		bznsProfile:
+		{
+			bizName:String,
+			bizAddress:String,
+			bizcategory:
+			{
+				catId:Number,
+				catName:String
+			},
+			bizcity:String
+		},
+		Rating:
+		{
+			totalReviews:Number,
+			avgRating:Number
+		}
+
+	}

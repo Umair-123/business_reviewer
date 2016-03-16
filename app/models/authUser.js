@@ -1,38 +1,33 @@
-var mongoose=require('mongoose');
+var mongoose = require('mongoose');
+var bcrypt = require('bcrypt-nodejs');
 
-var Schema=mongoose.Schema;
+var Schema = mongoose.Schema;
 
-var UserSchema=new Schema({
-	name: String,
-	username:{type: String,require:true,index:{unique:true}},
-	password:{type:String,require:true},
-	
-	bznsPreview:
-	{
-		Comment:
-		{
-			comment:String,
-			userId:Number
-		},
-		bznsProfile:
-		{
-			bizName:String,
-			bizAddress:String,
-			bizcategory:
-			{
-				catId:Number,
-				catName:String
-			},
-			bizcity:String
-		},
-		Rating:
-		{
-			totalReviews:Number,
-			avgRating:Number
-		}
-
-	} 
+var userSchema = new Schema({
+	firstname: String,
+	lastname: String,
+	username: {type: String, required: true, index: {unique: true}},
+	password: {type: String, required: true, select: false}
 });
 
+userSchema.pre('save', function(next){
+	var user = this;
 
-module.exports=mongoose.model('authUser',UserSchema);
+	if(!user.isModified('password')) return next();
+
+	bcrypt.hash(user.password, null, null, function(err, hash){
+
+		if(err) return next(err);
+
+		user.password = hash;
+		next();
+	});
+});
+
+userSchema.methods.comparePassword = function(password){
+
+	var user = this;
+	return bcrypt.compareSync(password, user.password);
+};
+
+module.exports = mongoose.model('User', userSchema);
